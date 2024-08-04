@@ -34,11 +34,9 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
             logger.info("Processing update: {}", update);
 
             if (update.message().text().equals("/start")) {
-
                 Long chatId = update.message().chat().id();
 
                 SendMessage message = new SendMessage(chatId, "Привет");
-
                 SendResponse response = telegramBot.execute(message);
             }
         });

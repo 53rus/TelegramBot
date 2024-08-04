@@ -1,5 +1,4 @@
 -- liquibase formatted sql
-
 -- changeset miliuschenko:1
 
 CREATE TABLE notification_table (
