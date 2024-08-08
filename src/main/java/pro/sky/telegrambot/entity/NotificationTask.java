@@ -6,22 +6,21 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-@Table (name = "notification_table")
+@Table (name = "notification_task")
 
 public class NotificationTask {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private Long chatId;
-    private String message;
-    private LocalDateTime data;
+    private String messageText;
+    private LocalDateTime dateTime;
 
-    public NotificationTask(Long id, Long chatId, String notificationText, LocalDateTime data) {
+    public NotificationTask(Long id, Long chatId, String messageText, LocalDateTime dateTime) {
         this.id = id;
         this.chatId = chatId;
-        this.message = notificationText;
-        this.data = data;
+        this.messageText = messageText;
+        this.dateTime = dateTime;
     }
 
     public NotificationTask() {
@@ -44,20 +43,20 @@ public class NotificationTask {
         this.chatId = chatId;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMessageText() {
+        return messageText;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessageText (String massageText) {
+        this.messageText = massageText;
     }
 
-    public LocalDateTime getData() {
-        return data;
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
     @Override
